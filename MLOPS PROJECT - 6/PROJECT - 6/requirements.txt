@@ -3,4 +3,10 @@ pandas
 setuptools
 mysql-connector-python
 scikit-learn
-
+lightgbm
+xgboost
+tensorboard
+torch
+matplotlib
+mlflow
+dvc
