@@ -1,0 +1,74 @@
+schema: '2.0'
+stages:
+  data_ingestion:
+    cmd: python src/data_ingestion.py
+    deps:
+    - path: config/paths_config.py
+      hash: md5
+      md5: 0e1535395ec460e96e5a6851875adb81
+      size: 740
+    - path: src/data_ingestion.py
+      hash: md5
+      md5: a8a1084b667a50317eb880068c053f8c
+      size: 1814
+    outs:
+    - path: artifacts/ingested_data
+      hash: md5
+      md5: dee39e8565dbdc35343721e0436f3b49.dir
+      size: 12158068
+      nfiles: 2
+  data_processing:
+    cmd: python src/data_processing.py
+    deps:
+    - path: config/paths_config.py
+      hash: md5
+      md5: 0e1535395ec460e96e5a6851875adb81
+      size: 740
+    - path: src/data_processing.py
+      hash: md5
+      md5: 699f2f4f6acfcc6062e847d4b8f3c811
+      size: 3690
+    outs:
+    - path: artifacts/processed_data
+      hash: md5
+      md5: 4242b0ef5bbbc1ec9f26163a32917833.dir
+      size: 9052140
+      nfiles: 1
+  feature_engineering:
+    cmd: python src/feature_engineering.py
+    deps:
+    - path: config/paths_config.py
+      hash: md5
+      md5: 0e1535395ec460e96e5a6851875adb81
+      size: 740
+    - path: src/feature_engineering.py
+      hash: md5
+      md5: f1617ffb35a4fd6c4738d3a3b66f84a7
+      size: 4928
+    - path: utils/helpers.py
+      hash: md5
+      md5: 6ea5e10193fcdeb7637bca8045d2a91a
+      size: 345
+    outs:
+    - path: artifacts/engineered_data
+      hash: md5
+      md5: 4988912669e630232d6b9de2fbb91425.dir
+      size: 3503241
+      nfiles: 1
+  model_training:
+    cmd: python src/model_training.py
+    deps:
+    - path: config/paths_config.py
+      hash: md5
+      md5: 0e1535395ec460e96e5a6851875adb81
+      size: 740
+    - path: src/model_training.py
+      hash: md5
+      md5: 36424744fb4115e457d071ee2fa01ad1
+      size: 4908
+    outs:
+    - path: artifacts/models
+      hash: md5
+      md5: 881557cc3f91561979f7ea0b782ce528.dir
+      size: 687540
+      nfiles: 1

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width , initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static' , filename='style.css') }}">
+        <title>MLOPS Prediction App</title>
+    </head>
+
+    <body>
+        <h1>Welcome to Prediction App</h1>
+
+        <form method="POST" action="/">
+            
+            <label for="Departure Delay">Departure Delay</label>
+            <input type="number" step="0.01" name="Departure Delay" required>
+
+            <label for="Arrival Delay">Arrival Delay</label>
+            <input type="number" step="0.01" name="Arrival Delay" required>
+
+            <label for="Flight Distance">Flight Distance</label>
+            <input type="number"  step="0.01" name="Flight Distance" required>
+
+            <label for="Online Boarding">Online Boarding</label>
+            <select name="Online Boarding" required>
+                <option value="0" >Very Poor</option>
+                <option value="1" >Poor</option>
+                <option value="2" >Average</option>
+                <option value="3" >Good</option>
+                <option value="4" >Excellent</option>
+                <option value="5" >Outstanding</option>
+            </select>
+
+            <label for="Inflight wifi service">Inflight wifi service</label>
+            <select name="Inflight wifi service" required>
+                <option value="0" >Very Poor</option>
+                <option value="1" >Poor</option>
+                <option value="2" >Average</option>
+                <option value="3" >Good</option>
+                <option value="4" >Excellent</option>
+                <option value="5" >Outstanding</option>
+            </select>
+
+            <label for="Class">Class</label>
+            <select name="Class" required>
+                <option value="0" >Buisness Travel</option>
+                <option value="1" >Personal Travel</option>
+            </select>
+
+            <label for="Type of Travel">Type of Travel</label>
+            <select name="Type of Travel" required>
+                <option value="0" >Buisness</option>
+                <option value="1" >Eco</option>
+                <option value="2" >Eco-Plus</option>
+            </select>
+
+            <label for="Inflight entertainment">Inflight entertainment</label>
+            <select name="Inflight entertainment" required>
+                <option value="0" >Very Poor</option>
+                <option value="1" >Poor</option>
+                <option value="2" >Average</option>
+                <option value="3" >Good</option>
+                <option value="4" >Excellent</option>
+                <option value="5" >Outstanding</option>
+            </select>
+
+            <label for="Seat comfort">Seat comfort</label>
+            <select name="Seat comfort" required>
+                <option value="0" >Very Poor</option>
+                <option value="1" >Poor</option>
+                <option value="2" >Average</option>
+                <option value="3" >Good</option>
+                <option value="4" >Excellent</option>
+                <option value="5" >Outstanding</option>
+            </select>
+
+            <label for="Leg room service">Leg room service</label>
+            <select name="Leg room service" required>
+                <option value="0" >Very Poor</option>
+                <option value="1" >Poor</option>
+                <option value="2" >Average</option>
+                <option value="3" >Good</option>
+                <option value="4" >Excellent</option>
+                <option value="5" >Outstanding</option>
+            </select>
+
+            <label for="On-board service">On-board service</label>
+            <select name="On-board service" required>
+                <option value="0" >Very Poor</option>
+                <option value="1" >Poor</option>
+                <option value="2" >Average</option>
+                <option value="3" >Good</option>
+                <option value="4" >Excellent</option>
+                <option value="5" >Outstanding</option>
+            </select>
+
+            <label for="Cleanliness">Cleanliness</label>
+            <select name="Cleanliness" required>
+                <option value="0" >Very Poor</option>
+                <option value="1" >Poor</option>
+                <option value="2" >Average</option>
+                <option value="3" >Good</option>
+                <option value="4" >Excellent</option>
+                <option value="5" >Outstanding</option>
+            </select>
+
+            <label for="Ease of Online Booking">Ease of Online Booking</label>
+            <select name="Ease of Online Booking" required>
+                <option value="0" >Very Poor</option>
+                <option value="1" >Poor</option>
+                <option value="2" >Average</option>
+                <option value="3" >Good</option>
+                <option value="4" >Excellent</option>
+                <option value="5" >Outstanding</option>
+            </select>
+
+            <button type="submit">Predict</button>
+
+        </form>
+
+        {% if prediction is not none %}
+        {% if prediction == 0 %}
+            <h2 style="color: red;">Prediction : Not Satisfied </h2>
+        {% elif prediction == 1 %}
+            <h2 style="color: green;">Prediction : Satisfied </h2>
+        {% endif %}
+
+        {% elif error is not none %}
+            <h2>Error: {{ error }}</h2>
+        {% endif %}
+        
+
+    </body>
+</html>

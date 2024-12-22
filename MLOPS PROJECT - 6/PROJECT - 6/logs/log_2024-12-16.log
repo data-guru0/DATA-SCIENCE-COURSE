@@ -1,0 +1,78 @@
+2024-12-16 09:16:11,606 - INFO - Data Ingestion has started
+2024-12-16 09:16:11,606 - INFO - Directory for Ingestion created
+2024-12-16 09:16:12,071 - INFO - Data loaded successfully with shape: (103594, 25)
+2024-12-16 09:16:12,140 - INFO - Data Splitted Sucessfully
+2024-12-16 09:16:13,180 - INFO - Training and testing data saved sucesffuly
+2024-12-16 09:16:13,186 - INFO - Starting the pipeline of Data Procesing
+2024-12-16 09:16:13,186 - INFO - Data Processinng Started
+2024-12-16 09:16:13,445 - INFO - Data read succesfull : Data shape : (82875, 25)
+2024-12-16 09:16:13,446 - INFO - Dropping Unnecesary Columns :  ['MyUnknownColumn', 'id']
+2024-12-16 09:16:13,457 - INFO - Columns dropped Sucesfully : Shape = (82875, 23)
+2024-12-16 09:16:13,459 - INFO - Handling outliers : Columns = ['Flight Distance', 'Departure Delay in Minutes', 'Arrival Delay in Minutes', 'Checkin service']
+2024-12-16 09:16:13,485 - INFO - Outliers handled  Sucesffuully : (82875, 23)
+2024-12-16 09:16:13,486 - INFO - Handling null values
+2024-12-16 09:16:13,487 - INFO - Missing values handled sucessfully : Shape == (82875, 23)
+2024-12-16 09:16:13,954 - INFO - Processed data saved sucesfully
+2024-12-16 09:16:13,954 - INFO - Data Proccesing Pipeline COmpleted Sucessfully
+2024-12-16 09:16:13,956 - INFO - Starting your feature enginnering pipeline
+2024-12-16 09:16:13,957 - INFO - Loading data
+2024-12-16 09:16:14,155 - INFO - Data loaded sucesffuly
+2024-12-16 09:16:14,155 - INFO - Starting Feature Construction
+2024-12-16 09:16:14,159 - INFO - Feature Construction done sucesfully
+2024-12-16 09:16:14,160 - INFO - Starting Binning of Age Column
+2024-12-16 09:16:14,173 - INFO - Binning of Age Column Sucesfull
+2024-12-16 09:16:14,173 - INFO - Performing label encoding on ['Gender', 'Customer Type', 'Type of Travel', 'Class', 'satisfaction', 'Age Group']
+2024-12-16 09:16:14,281 - INFO - Mapping for Gender : {'Female': np.int64(0), 'Male': np.int64(1)}
+2024-12-16 09:16:14,281 - INFO - Mapping for Customer Type : {'Loyal Customer': np.int64(0), 'disloyal Customer': np.int64(1)}
+2024-12-16 09:16:14,281 - INFO - Mapping for Type of Travel : {'Business travel': np.int64(0), 'Personal Travel': np.int64(1)}
+2024-12-16 09:16:14,281 - INFO - Mapping for Class : {'Business': np.int64(0), 'Eco': np.int64(1), 'Eco Plus': np.int64(2)}
+2024-12-16 09:16:14,281 - INFO - Mapping for satisfaction : {'neutral or dissatisfied': np.int64(0), 'satisfied': np.int64(1)}
+2024-12-16 09:16:14,281 - INFO - Mapping for Age Group : {'Adult': np.int64(0), 'Child': np.int64(1), 'Senior': np.int64(2), 'Youngster': np.int64(3)}
+2024-12-16 09:16:14,281 - INFO - Label Encoding sucesffull
+2024-12-16 09:16:14,282 - INFO - Starting Feature Selection
+2024-12-16 09:16:14,705 - INFO - Mutual Information Table is : 
+                              Feature  Mutual Information
+11                    Online boarding            0.210781
+23                        Delay Ratio            0.202477
+6               Inflight wifi service            0.161651
+4                               Class            0.134126
+3                      Type of Travel            0.113843
+13             Inflight entertainment            0.094464
+5                     Flight Distance            0.089627
+12                       Seat comfort            0.079912
+15                   Leg room service            0.060933
+14                   On-board service            0.057418
+19                        Cleanliness            0.052649
+8              Ease of Online booking            0.051334
+2                                 Age            0.047422
+16                   Baggage handling            0.041933
+18                   Inflight service            0.040663
+17                    Checkin service            0.033162
+10                     Food and drink            0.027606
+24                          Age Group            0.022313
+1                       Customer Type            0.018396
+9                       Gate location            0.012063
+21           Arrival Delay in Minutes            0.007386
+22                        Total Delay            0.005992
+20         Departure Delay in Minutes            0.003289
+7   Departure/Arrival time convenient            0.001867
+0                              Gender            0.000068
+2024-12-16 09:16:14,717 - INFO - Top features : ['Online boarding', 'Delay Ratio', 'Inflight wifi service', 'Class', 'Type of Travel', 'Inflight entertainment', 'Flight Distance', 'Seat comfort', 'Leg room service', 'On-board service', 'Cleanliness', 'Ease of Online booking']
+2024-12-16 09:16:14,718 - INFO - Feature Selection Sucesfull
+2024-12-16 09:16:14,722 - INFO - Saving your data ...
+2024-12-16 09:16:15,099 - INFO - Data Saved succesfully at ./artifacts\engineered_data\final_df.csv
+2024-12-16 09:16:15,099 - INFO - Your FE pipeline sucesfully done..
+2024-12-16 09:16:15,099 - INFO - End of FE pipeline
+2024-12-16 09:16:15,505 - INFO - Data Loading for Model training
+2024-12-16 09:16:15,616 - INFO - Data load sucesfull
+2024-12-16 09:16:15,616 - INFO - Data splitting started
+2024-12-16 09:16:15,619 - INFO - ['Online boarding', 'Delay Ratio', 'Inflight wifi service', 'Class', 'Type of Travel', 'Inflight entertainment', 'Flight Distance', 'Seat comfort', 'Leg room service', 'On-board service', 'Cleanliness', 'Ease of Online booking']
+2024-12-16 09:16:15,634 - INFO - Data splitting done
+2024-12-16 09:16:15,650 - INFO - Loaded hyperparamters :  {'learning_rate': [0.01, 0.05, 0.1], 'n_estimators': [100, 200, 300], 'max_depth': [5, 10, 15]}
+2024-12-16 09:16:15,653 - INFO - Training model started
+2024-12-16 09:18:01,735 - INFO - Model training completed
+2024-12-16 09:18:01,735 - INFO - Best hyperparamters are : {'learning_rate': 0.1, 'max_depth': 10, 'n_estimators': 200}
+2024-12-16 09:18:01,738 - INFO - Model evaluation sterted
+2024-12-16 09:18:01,770 - INFO - Evaluation metrics : {'accuracy': 0.9421417797888386, 'precison': np.float64(0.9422589699710564), 'recall': np.float64(0.9421417797888386), 'f1_score': np.float64(0.942012521754656), 'confusion_matrix': [[9104, 364], [595, 6512]]}
+2024-12-16 09:18:01,778 - INFO - saving model
+2024-12-16 09:18:01,787 - INFO - Model saved sucesfully

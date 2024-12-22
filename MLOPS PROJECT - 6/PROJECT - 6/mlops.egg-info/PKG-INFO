@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: mlops
+Version: 0.1
+Summary: MLOPS PROJECT
+Author: Sudhanshu
+Author-email: abc@gmail.com
+Requires-Python: >=3.7
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: setuptools
+Requires-Dist: scikit-learn
+Requires-Dist: lightgbm
+Requires-Dist: matplotlib
+Requires-Dist: mlflow
+Requires-Dist: flask
+Requires-Dist: pylint
+Requires-Dist: flake8
+Requires-Dist: black
